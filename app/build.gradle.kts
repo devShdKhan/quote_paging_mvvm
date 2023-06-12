@@ -3,7 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
-    id ("kotlin-parcelize")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -37,7 +37,7 @@ android {
         jvmTarget = "17"
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding = true
     }
 }
@@ -58,13 +58,15 @@ dependencies {
 
     //ktx
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
-    implementation("androidx.fragment:fragment-ktx:1.5.7")
+    implementation("androidx.activity:activity-ktx:1.7.2")
 
     //hilt
     implementation("com.google.dagger:hilt-android:2.44")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
 
-    val paging_version = "3.1.1"
+    //paging
+    implementation("androidx.paging:paging-runtime-ktx:3.1.1")
 
-    implementation("androidx.paging:paging-runtime:$paging_version")
+    //splash screen
+    implementation("androidx.core:core-splashscreen:1.0.1")
 }
