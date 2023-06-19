@@ -1,6 +1,6 @@
 package com.example.myapplication.ui
 
-import android.content.Intent
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -34,7 +34,7 @@ class FragmentQuoteList : Fragment(), QuoteClickListener {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentQuoteListBinding.inflate(layoutInflater)
         return binding.root
     }
