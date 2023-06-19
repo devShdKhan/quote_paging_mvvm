@@ -69,4 +69,5 @@ dependencies {
 
     //splash screen
     implementation("androidx.core:core-splashscreen:1.0.1")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.6.0")
 }

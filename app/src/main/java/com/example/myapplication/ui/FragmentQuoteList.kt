@@ -2,12 +2,17 @@ package com.example.myapplication.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.myapplication.R
 import com.example.myapplication.adapter.QuoteAdapter
-import com.example.myapplication.databinding.ActivityQuoteListBinding
+import com.example.myapplication.databinding.FragmentQuoteListBinding
 import com.example.myapplication.listeners.QuoteClickListener
 import com.example.myapplication.model.Quote
 import com.example.myapplication.model.QuoteResponse
@@ -17,18 +22,26 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class QuoteListActivity : AppCompatActivity(), QuoteClickListener {
+class FragmentQuoteList : Fragment(), QuoteClickListener {
 
     private val viewModel by viewModels<QuoteViewModel>()
 
     private val quoteAdapter by lazy { QuoteAdapter(this) }
 
-    private lateinit var binding: ActivityQuoteListBinding
+    private lateinit var binding: FragmentQuoteListBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityQuoteListBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        binding = FragmentQuoteListBinding.inflate(layoutInflater)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
 
         setupRV()
 
@@ -62,9 +75,7 @@ class QuoteListActivity : AppCompatActivity(), QuoteClickListener {
     }
 
     override fun onQuoteClick(quote: Quote) {
-        val quoteDetailIntent = Intent(this, QuoteDetailActivity::class.java).apply {
-            putExtra("quote", quote)
-        }
-        startActivity(quoteDetailIntent)
+        val bundle = bundleOf("quote" to quote)
+        findNavController().navigate(R.id.action_FragmentQuoteList_to_FragmentQuoteDetail, bundle)
     }
 }

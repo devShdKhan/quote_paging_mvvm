@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/routerFragment">
+
+    <fragment
+        android:id="@+id/routerFragment"
+        android:name="com.example.myapplication.ui.FragmentRouter"
+        android:label="FragmentRouter">
+        <action
+            android:id="@+id/action_FragmentRouter_to_FragmentQuoteList"
+            app:destination="@id/quoteListFragment" />
+        <action
+            android:id="@+id/action_FragmentRouter_to_FragmentPaginationQuoteList"
+            app:destination="@id/paginationQuoteListFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quoteListFragment"
+        android:name="com.example.myapplication.ui.FragmentQuoteList"
+        android:label="FragmentQuoteList">
+        <action
+            android:id="@+id/action_FragmentQuoteList_to_FragmentQuoteDetail"
+            app:destination="@id/quoteDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paginationQuoteListFragment"
+        android:name="com.example.myapplication.ui.FragmentPaginationQuoteList"
+        android:label="FragmentPaginationQuoteList">
+        <action
+            android:id="@+id/action_FragmentPaginationQuoteList_to_FragmentQuoteDetail"
+            app:destination="@id/quoteDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quoteDetailFragment"
+        android:name="com.example.myapplication.ui.FragmentQuoteDetail"
+        android:label="FragmentQuoteDetail" />
+
+
+</navigation>

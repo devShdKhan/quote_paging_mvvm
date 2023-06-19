@@ -17,24 +17,15 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.MyApp.Splash">
+            android:name=".MainActivity"
+            android:theme="@style/Theme.MyApp.Splash"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.QuoteListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.PaginationQuoteListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.QuoteDetailActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
