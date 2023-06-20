@@ -1,7 +1,7 @@
 package com.example.myapplication.di
 
-import com.example.myapplication.repository.quote.QuoteRepository
-import com.example.myapplication.repository.quote.QuoteRepositoryImpl
+import com.example.myapplication.repository.QuoteRepository
+import com.example.myapplication.repository.QuoteRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

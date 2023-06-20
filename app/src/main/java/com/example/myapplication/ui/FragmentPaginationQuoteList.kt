@@ -25,9 +25,7 @@ import kotlinx.coroutines.launch
 class FragmentPaginationQuoteList : Fragment(), QuoteClickListener {
 
     private val viewModel by viewModels<PagingQuoteViewModel>()
-
     private val quotePagingAdapter by lazy { QuotePagingAdapter(this) }
-
     private lateinit var binding: FragmentPaginationQuoteListBinding
 
     override fun onCreateView(
@@ -41,8 +39,11 @@ class FragmentPaginationQuoteList : Fragment(), QuoteClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rv.adapter = quotePagingAdapter
+        setupRV()
+        registerFlowCollectors()
+    }
 
+    private fun registerFlowCollectors() {
         lifecycleScope.launch {
             viewModel.pagingQuotes.collect {
                 setupPagingList(it)
@@ -59,6 +60,10 @@ class FragmentPaginationQuoteList : Fragment(), QuoteClickListener {
         }
     }
 
+    private fun setupRV() {
+        binding.rv.adapter = quotePagingAdapter
+    }
+
     private fun setupPagingList(pagingData: PagingData<Quote>) {
         quotePagingAdapter.submitData(lifecycle, pagingData)
     }
@@ -69,6 +74,9 @@ class FragmentPaginationQuoteList : Fragment(), QuoteClickListener {
 
     override fun onQuoteClick(quote: Quote) {
         val bundle = bundleOf("quote" to quote)
-        findNavController().navigate(R.id.action_FragmentPaginationQuoteList_to_FragmentQuoteDetail, bundle)
+        findNavController().navigate(
+            R.id.action_FragmentPaginationQuoteList_to_FragmentQuoteDetail,
+            bundle
+        )
     }
 }

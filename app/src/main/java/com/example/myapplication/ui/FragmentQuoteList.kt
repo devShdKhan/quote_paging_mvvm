@@ -1,6 +1,5 @@
 package com.example.myapplication.ui
 
-
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,9 +24,7 @@ import kotlinx.coroutines.launch
 class FragmentQuoteList : Fragment(), QuoteClickListener {
 
     private val viewModel by viewModels<QuoteViewModel>()
-
     private val quoteAdapter by lazy { QuoteAdapter(this) }
-
     private lateinit var binding: FragmentQuoteListBinding
 
     override fun onCreateView(
@@ -41,10 +38,11 @@ class FragmentQuoteList : Fragment(), QuoteClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
         setupRV()
+        registerFlowCollector()
+    }
 
+    private fun registerFlowCollector() {
         lifecycleScope.launch {
             viewModel.quotes.collect {
                 when (it) {

@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:padding="24dp">
+    android:padding="@dimen/dimen_24dp">
 
     <Button
         android:id="@+id/btnFetchNormalQuote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fetch Quotes"
+        android:text="@string/fetch_quotes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -19,7 +19,7 @@
         android:id="@+id/btnFetchPagingQuote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fetch Paging Quotes"
+        android:text="@string/fetch_paging_quotes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnFetchNormalQuote" />

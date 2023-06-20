@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="fetch_quotes">Fetch Quotes</string>
+    <string name="fetch_paging_quotes">Fetch Paging Quotes</string>
 </resources>
