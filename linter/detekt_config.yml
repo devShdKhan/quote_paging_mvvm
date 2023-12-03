@@ -1,0 +1,1278 @@
+# Link for default config file provided by Detekt.
+# https://github.com/detekt/detekt/blob/main/detekt-core/src/main/resources/default-detekt-config.yml
+# https://github.com/detekt/detekt/blob/main/detekt-formatting/src/main/resources/config/config.yml
+
+build:
+  maxIssues: 1
+  excludeCorrectable: false
+  weights:
+
+config:
+  validation: true
+  warningsAsErrors: true
+  checkExhaustiveness: false
+  excludes: ''
+
+processors:
+  active: true
+  exclude:
+    - 'DetektProgressListener'
+
+console-reports:
+  active: true
+  exclude:
+    - 'ProjectStatisticsReport'
+    - 'ComplexityReport'
+    - 'NotificationReport'
+    - 'FindingsReport'
+    - 'FileBasedFindingsReport'
+  #  - 'LiteFindingsReport'
+
+output-reports:
+  active: true
+  exclude:
+  # - 'TxtOutputReport'
+  # - 'XmlOutputReport'
+  # - 'HtmlOutputReport'
+  # - 'MdOutputReport'
+  # - 'SarifOutputReport'
+
+
+formatting:
+  active: true
+  android: false
+  autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#annotation-formatting
+  AnnotationOnSeparateLine:
+    active: false
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#annotation-spacing
+  AnnotationSpacing:
+    active: false
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#argument-list-wrapping
+  ArgumentListWrapping:
+    active: true
+    autoCorrect: true
+    indentSize: 2
+    maxLineLength: 120
+
+  # https://pinterest.github.io/ktlint/rules/standard/#chain-wrapping
+  ChainWrapping:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#comment-spacing
+  CommentSpacing:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/experimental/#discouraged-comment-location
+  DiscouragedCommentLocation:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#enum-entry
+  EnumEntryNameCase:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#file-name
+  Filename:
+    active: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#final-newline
+  FinalNewline:
+    active: true
+    autoCorrect: true
+    insertFinalNewLine: true
+
+  # https://detekt.dev/docs/rules/formatting#functionsignature
+  # TODO: discuss
+  FunctionSignature:
+    active: false
+    autoCorrect: true
+    forceMultilineWhenParameterCountGreaterOrEqualThan: 10
+    functionBodyExpressionWrapping: 'multiline'
+    maxLineLength: 120
+    indentSize: 2
+
+  # https://pinterest.github.io/ktlint/rules/standard/#import-ordering
+  ImportOrdering:
+    active: false
+    autoCorrect: true
+    layout: '*,java.**,javax.**,kotlin.**,^'
+
+  # https://pinterest.github.io/ktlint/rules/standard/#indentation
+  Indentation:
+    active: true
+    autoCorrect: true
+    indentSize: 2
+
+  # https://pinterest.github.io/ktlint/rules/standard/#modifier-order
+  ModifierOrdering:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#multiline-if-else
+  # TODO: consult
+  MultiLineIfElse:
+    active: false
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-blank-lines-before
+  NoBlankLineBeforeRbrace:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-blank-lines-in-chained-method-calls
+  NoBlankLinesInChainedMethodCalls:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-consecutive-blank-lines
+  NoConsecutiveBlankLines:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-empty-class-bodies
+  NoEmptyClassBody:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-leading-empty-lines-in-method-blocks
+  NoEmptyFirstLineInMethodBlock:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-line-break-after-else
+  NoLineBreakAfterElse:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-line-break-before-assignment
+  NoLineBreakBeforeAssignment:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-multi-spaces
+  NoMultipleSpaces:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-semicolons
+  NoSemicolons:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-trailing-whitespaces
+  NoTrailingSpaces:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-unit-as-return-type
+  NoUnitReturn:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-unused-imports
+  NoUnusedImports:
+    active: false
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#no-wildcard-imports
+  NoWildcardImports:
+    active: false
+    packagesToUseImportOnDemandProperty: 'java.util.*,kotlinx.android.synthetic.**'
+
+  # https://detekt.dev/docs/rules/formatting#parameterlistwrapping
+  ParameterListWrapping:
+    active: true
+    autoCorrect: true
+    maxLineLength: 120
+
+  # https://pinterest.github.io/ktlint/rules/standard/#angle-bracket-spacing
+  SpacingAroundAngleBrackets:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#colon-spacing
+  SpacingAroundColon:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#comma-spacing
+  SpacingAroundComma:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#curly-spacing
+  SpacingAroundCurly:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#dot-spacing
+  SpacingAroundDot:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#double-colon-spacing
+  SpacingAroundDoubleColon:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#keyword-spacing
+  SpacingAroundKeyword:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#operator-spacing
+  SpacingAroundOperators:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#parenthesis-spacing
+  SpacingAroundParens:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#range-spacing
+  SpacingAroundRangeOperator:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#unary-operator-spacing
+  SpacingAroundUnaryOperator:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#blank-line-between-declarations-with-annotations
+  SpacingBetweenDeclarationsWithAnnotations:
+    active: false
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#blank-line-between-declaration-with-comments
+  SpacingBetweenDeclarationsWithComments:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#string-template
+  StringTemplate:
+    active: true
+    autoCorrect: true
+
+  # https://detekt.dev/docs/rules/formatting#trailingcommaoncallsite
+  TrailingCommaOnCallSite:
+    active: true
+    autoCorrect: true
+    useTrailingCommaOnCallSite: true
+
+  # https://detekt.dev/docs/rules/formatting#trailingcommaondeclarationsite
+  TrailingCommaOnDeclarationSite:
+    active: true
+    autoCorrect: true
+    useTrailingCommaOnDeclarationSite: true
+
+  # https://pinterest.github.io/ktlint/rules/experimental/#type-argument-list-spacing
+  TypeArgumentListSpacing:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/experimental/#type-parameter-list-spacing
+  TypeParameterListSpacing:
+    active: true
+    autoCorrect: true
+
+  # https://pinterest.github.io/ktlint/rules/standard/#wrapping
+  Wrapping:
+    active: true
+    autoCorrect: true
+    indentSize: 2
+
+
+style:
+  active: true
+
+  # https://detekt.dev/docs/rules/style#alsocouldbeapply
+  AlsoCouldBeApply:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#canbenonnullable
+  CanBeNonNullable:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#cascadingcallwrapping
+  CascadingCallWrapping:
+    active: true
+    includeElvis: true
+
+  # https://detekt.dev/docs/rules/style#classordering
+  ClassOrdering:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#collapsibleifstatements
+  CollapsibleIfStatements:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#dataclasscontainsfunctions
+  DataClassContainsFunctions:
+    active: true
+    conversionFunctionPrefix:
+      - 'to'
+
+  # https://detekt.dev/docs/rules/style#dataclassshouldbeimmutable
+  DataClassShouldBeImmutable:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#destructuringdeclarationwithtoomanyentries
+  DestructuringDeclarationWithTooManyEntries:
+    active: true
+    maxDestructuringEntries: 3
+
+  # https://detekt.dev/docs/rules/style#equalsnullcall
+  EqualsNullCall:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#equalsonsignatureline
+  EqualsOnSignatureLine:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#explicitcollectionelementaccessmethod
+  ExplicitCollectionElementAccessMethod:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#explicititlambdaparameter
+  ExplicitItLambdaParameter:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#expressionbodysyntax
+  ExpressionBodySyntax:
+    active: true
+    includeLineWrapping: false
+
+  # https://detekt.dev/docs/rules/style#forbiddencomment
+  ForbiddenComment:
+    active: true
+    values:
+      - 'FIXME:'
+      - 'STOPSHIP:'
+      - 'TODO:'
+    allowedPatterns: ''
+    customMessage: ''
+
+  # https://detekt.dev/docs/rules/style#forbiddenvoid
+  ForbiddenVoid:
+    active: true
+    ignoreOverridden: false
+    ignoreUsageInGenerics: false
+
+  # https://detekt.dev/docs/rules/style#functiononlyreturningconstant
+  FunctionOnlyReturningConstant:
+    active: true
+    ignoreOverridableFunction: true
+    ignoreActualFunction: true
+    excludedFunctions: []
+
+  # https://detekt.dev/docs/rules/style#loopwithtoomanyjumpstatements
+  LoopWithTooManyJumpStatements:
+    active: true
+    maxJumpCount: 1
+
+  # https://detekt.dev/docs/rules/style#magicnumber
+  MagicNumber:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**', '**/*.kts']
+    ignoreNumbers:
+      - '-1'
+      - '0'
+      - '1'
+      - '2'
+    ignoreHashCodeFunction: true
+    ignorePropertyDeclaration: true
+    ignoreLocalVariableDeclaration: false
+    ignoreConstantDeclaration: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreAnnotation: false
+    ignoreNamedArgument: true
+    ignoreEnums: false
+    ignoreRanges: false
+    ignoreExtensionFunctions: true
+
+  # https://detekt.dev/docs/rules/style#mandatorybracesloops
+  MandatoryBracesLoops:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#maxchainedcallsonsameline
+  MaxChainedCallsOnSameLine:
+    active: true
+    maxChainedCalls: 5
+
+  # https://detekt.dev/docs/rules/style#maxlinelength
+  MaxLineLength:
+    active: true
+    maxLineLength: 120
+    excludePackageStatements: true
+    excludeImportStatements: true
+    excludeCommentStatements: true
+    excludeRawStrings: true
+
+  # https://detekt.dev/docs/rules/style#maybeconst
+  MayBeConst:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#modifierorder
+  ModifierOrder:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#multilinelambdaitparameter
+  MultilineLambdaItParameter:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#nestedclassesvisibility
+  NestedClassesVisibility:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#newlineatendoffile
+  NewLineAtEndOfFile:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#notabs
+  NoTabs:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#nullablebooleancheck
+  NullableBooleanCheck:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#objectliteraltolambda
+  ObjectLiteralToLambda:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#optionalabstractkeyword
+  OptionalAbstractKeyword:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#optionalunit
+  OptionalUnit:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#optionalwhenbraces
+  OptionalWhenBraces:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#prefertooverpairsyntax
+  PreferToOverPairSyntax:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#protectedmemberinfinalclass
+  ProtectedMemberInFinalClass:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#redundantexplicittype
+  RedundantExplicitType:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#redundanthigherordermapusage
+  RedundantHigherOrderMapUsage:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#redundantvisibilitymodifierrule
+  RedundantVisibilityModifierRule:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#returncount
+  ReturnCount:
+    active: true
+    max: 5
+    excludedFunctions:
+      - 'equals'
+    excludeLabeled: false
+    excludeReturnFromLambda: true
+    excludeGuardClauses: false
+
+  # https://detekt.dev/docs/rules/style#safecast
+  SafeCast:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#serialversionuidinserializableclass
+  SerialVersionUIDInSerializableClass:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#spacingbetweenpackageandimports
+  SpacingBetweenPackageAndImports:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#throwscount
+  ThrowsCount:
+    active: true
+    max: 2
+    excludeGuardClauses: false
+
+  # https://detekt.dev/docs/rules/style#trailingwhitespace
+  TrailingWhitespace:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#trimmultilinerawstring
+  TrimMultilineRawString:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#underscoresinnumericliterals
+  UnderscoresInNumericLiterals:
+    active: true
+    acceptableLength: 4
+    allowNonStandardGrouping: false
+
+  # https://detekt.dev/docs/rules/style/#unnecessaryabstractclass
+  UnnecessaryAbstractClass:
+    active: true
+    ignoreAnnotated: ['dagger.Module']
+
+  # https://detekt.dev/docs/rules/style#unnecessaryannotationusesitetarget
+  UnnecessaryAnnotationUseSiteTarget:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unnecessaryapply
+  UnnecessaryApply:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unnecessarybackticks
+  UnnecessaryBackticks:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unnecessaryfilter
+  UnnecessaryFilter:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unnecessaryinheritance
+  UnnecessaryInheritance:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unnecessaryinnerclass
+  UnnecessaryInnerClass:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unnecessarylet
+  UnnecessaryLet:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unnecessaryparentheses
+  UnnecessaryParentheses:
+    active: true
+    allowForUnclearPrecedence: true
+
+  # https://detekt.dev/docs/rules/style#untilinsteadofrangeto
+  UntilInsteadOfRangeTo:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unusedimports
+  UnusedImports:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unusedprivateclass
+  UnusedPrivateClass:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#unusedprivatemember
+  UnusedPrivateMember:
+    active: true
+    allowedNames: ''
+    ignoreAnnotated: ['Preview']
+
+  # https://detekt.dev/docs/rules/style#useanyornoneinsteadoffind
+  UseAnyOrNoneInsteadOfFind:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#usearrayliteralsinannotations
+  UseArrayLiteralsInAnnotations:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#usechecknotnull
+  UseCheckNotNull:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#usecheckorerror
+  UseCheckOrError:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#usedataclass
+  UseDataClass:
+    active: true
+    allowVars: true
+
+  # https://detekt.dev/docs/rules/style#useemptycounterpart
+  UseEmptyCounterpart:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#useifemptyorifblank
+  UseIfEmptyOrIfBlank:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#useifinsteadofwhen
+  UseIfInsteadOfWhen:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#useisnullorempty
+  UseIsNullOrEmpty:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#useorempty
+  UseOrEmpty:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#userequire
+  UseRequire:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#userequirenotnull
+  UseRequireNotNull:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#usesumofinsteadofflatmapsize
+  UseSumOfInsteadOfFlatMapSize:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#uselesscallonnotnull
+  UselessCallOnNotNull:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#utilityclasswithpublicconstructor
+  UtilityClassWithPublicConstructor:
+    active: true
+
+  # https://detekt.dev/docs/rules/style#varcouldbeval
+  VarCouldBeVal:
+    active: true
+    ignoreLateinitVar: true
+
+
+coroutines:
+  active: true
+
+  # https://detekt.dev/docs/rules/coroutines#globalcoroutineusage
+  GlobalCoroutineUsage:
+    active: true
+
+  # https://detekt.dev/docs/rules/coroutines#injectdispatcher
+  InjectDispatcher:
+    active: true
+    dispatcherNames:
+      - 'IO'
+      - 'Default'
+      - 'Unconfined'
+
+  # https://detekt.dev/docs/rules/coroutines#redundantsuspendmodifier
+  RedundantSuspendModifier:
+    active: true
+
+  # https://detekt.dev/docs/rules/coroutines#sleepinsteadofdelay
+  SleepInsteadOfDelay:
+    active: true
+
+  # https://detekt.dev/docs/rules/coroutines#suspendfunwithflowreturntype
+  SuspendFunWithFlowReturnType:
+    active: true
+
+
+empty-blocks:
+  active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptycatchblock
+  EmptyCatchBlock:
+    active: true
+    allowedExceptionNameRegex: '_|(ignore|expected).*'
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptyclassblock
+  EmptyClassBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptydefaultconstructor
+  EmptyDefaultConstructor:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptydowhileblock
+  EmptyDoWhileBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptyelseblock
+  EmptyElseBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptyfinallyblock
+  EmptyFinallyBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptyforblock
+  EmptyForBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptyfunctionblock
+  EmptyFunctionBlock:
+    active: true
+    ignoreOverridden: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptyifblock
+  EmptyIfBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptyinitblock
+  EmptyInitBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptyktfile
+  EmptyKtFile:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptysecondaryconstructor
+  EmptySecondaryConstructor:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptytryblock
+  EmptyTryBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptywhenblock
+  EmptyWhenBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/empty-blocks#emptywhileblock
+  EmptyWhileBlock:
+    active: true
+
+
+naming:
+  active: true
+
+  # https://detekt.dev/docs/rules/naming#booleanpropertynaming
+  BooleanPropertyNaming:
+    active: true
+    allowedPattern: '^(is|has|are)'
+
+  # https://detekt.dev/docs/rules/naming#classnaming
+  ClassNaming:
+    active: true
+    classPattern: '[A-Z][a-zA-Z0-9]*'
+
+  # https://detekt.dev/docs/rules/naming#constructorparameternaming
+  ConstructorParameterNaming:
+    active: true
+    parameterPattern: '[a-z][A-Za-z0-9]*'
+    privateParameterPattern: '[a-z][A-Za-z0-9]*'
+    excludeClassPattern: '$^'
+
+  # https://detekt.dev/docs/rules/naming#enumnaming
+  EnumNaming:
+    active: true
+    enumEntryPattern: '[A-Z][_a-zA-Z0-9]*'
+
+  # https://detekt.dev/docs/rules/naming#forbiddenclassname
+  ForbiddenClassName:
+    active: false
+    forbiddenName: []
+
+  # https://detekt.dev/docs/rules/naming#functionmaxlength
+  FunctionMaxLength:
+    active: false
+    maximumFunctionNameLength: 60
+
+  # https://detekt.dev/docs/rules/naming#functionminlength
+  FunctionMinLength:
+    active: true
+    minimumFunctionNameLength: 3
+
+  # https://detekt.dev/docs/rules/naming#functionnaming
+  FunctionNaming:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+    functionPattern: '[a-z][a-zA-Z0-9]*'
+    excludeClassPattern: '$^'
+    ignoreAnnotated: ['Composable']
+
+  # https://detekt.dev/docs/rules/naming#functionparameternaming
+  FunctionParameterNaming:
+    active: true
+    parameterPattern: '[a-z][A-Za-z0-9]*'
+    excludeClassPattern: '$^'
+
+  # https://detekt.dev/docs/rules/naming#invalidpackagedeclaration
+  InvalidPackageDeclaration:
+    active: false
+    rootPackage: ''
+    requireRootInDeclaration: false
+
+  # https://detekt.dev/docs/rules/naming#lambdaparameternaming
+  LambdaParameterNaming:
+    active: true
+    parameterPattern: '[a-z][A-Za-z0-9]*|_'
+
+  # https://detekt.dev/docs/rules/naming#matchingdeclarationname
+  MatchingDeclarationName:
+    active: true
+    mustBeFirst: false
+
+  # https://detekt.dev/docs/rules/naming#membernameequalsclassname
+  MemberNameEqualsClassName:
+    active: true
+    ignoreOverridden: true
+
+  # https://detekt.dev/docs/rules/naming#nonameshadowing
+  NoNameShadowing:
+    active: true
+
+  # https://detekt.dev/docs/rules/naming#nonbooleanpropertyprefixedwithis
+  NonBooleanPropertyPrefixedWithIs:
+    active: true
+
+  # https://detekt.dev/docs/rules/naming#objectpropertynaming
+  ObjectPropertyNaming:
+    active: true
+    constantPattern: '[A-Za-z][_A-Za-z0-9]*'
+    propertyPattern: '[A-Za-z][_A-Za-z0-9]*'
+    privatePropertyPattern: '(_)?[A-Za-z][_A-Za-z0-9]*'
+
+  # https://detekt.dev/docs/rules/naming#packagenaming
+  PackageNaming:
+    active: true
+    packagePattern: '[a-z]+(\.[a-z][A-Za-z0-9]*)*'
+
+  # https://detekt.dev/docs/rules/naming#toplevelpropertynaming
+  TopLevelPropertyNaming:
+    active: true
+    constantPattern: '[A-Z][_A-Z0-9]*'
+    propertyPattern: '[A-Za-z][_A-Za-z0-9]*'
+    privatePropertyPattern: '_?[A-Za-z][_A-Za-z0-9]*'
+
+  # https://detekt.dev/docs/rules/naming#variablemaxlength
+  VariableMaxLength:
+    active: true
+    maximumVariableNameLength: 64
+
+  # https://detekt.dev/docs/rules/naming#variableminlength
+  VariableMinLength:
+    active: true
+    minimumVariableNameLength: 1
+
+  # https://detekt.dev/docs/rules/naming#variablenaming
+  VariableNaming:
+    active: true
+    variablePattern: '[a-z][A-Za-z0-9]*'
+    privateVariablePattern: '(_)?[a-z][A-Za-z0-9]*'
+    excludeClassPattern: '$^'
+
+
+performance:
+  active: true
+
+  # https://detekt.dev/docs/rules/performance#arrayprimitive
+  ArrayPrimitive:
+    active: true
+
+  # https://detekt.dev/docs/rules/performance#couldbesequence
+  CouldBeSequence:
+    active: true
+    threshold: 3
+
+  # https://detekt.dev/docs/rules/performance#foreachonrange
+  ForEachOnRange:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+
+  # https://detekt.dev/docs/rules/performance#spreadoperator
+  SpreadOperator:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+
+  # https://detekt.dev/docs/rules/performance#unnecessarypartofbinaryexpression
+  UnnecessaryPartOfBinaryExpression:
+    active: false
+
+  # https://detekt.dev/docs/rules/performance#unnecessarytemporaryinstantiation
+  UnnecessaryTemporaryInstantiation:
+    active: true
+
+
+potential-bugs:
+  active: true
+
+
+  # https://detekt.dev/docs/rules/potential-bugs#avoidreferentialequality
+  AvoidReferentialEquality:
+    active: true
+    forbiddenTypePatterns:
+      - 'kotlin.String'
+
+  # https://detekt.dev/docs/rules/potential-bugs#casttonullabletype
+  CastToNullableType:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#deprecation
+  Deprecation:
+    active: false
+
+  # https://detekt.dev/docs/rules/potential-bugs#dontdowncastcollectiontypes
+  DontDowncastCollectionTypes:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#doublemutabilityforcollection
+  DoubleMutabilityForCollection:
+    active: true
+    mutableTypes:
+      - 'kotlin.collections.MutableList'
+      - 'kotlin.collections.MutableMap'
+      - 'kotlin.collections.MutableSet'
+      - 'java.util.ArrayList'
+      - 'java.util.LinkedHashSet'
+      - 'java.util.HashSet'
+      - 'java.util.LinkedHashMap'
+      - 'java.util.HashMap'
+
+
+  # https://detekt.dev/docs/rules/potential-bugs#elsecaseinsteadofexhaustivewhen
+  ElseCaseInsteadOfExhaustiveWhen:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#equalsalwaysreturnstrueorfalse
+  EqualsAlwaysReturnsTrueOrFalse:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#equalswithhashcodeexist
+  EqualsWithHashCodeExist:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#exitoutsidemain
+  ExitOutsideMain:
+    active: false
+
+  # https://detekt.dev/docs/rules/potential-bugs#explicitgarbagecollectioncall
+  ExplicitGarbageCollectionCall:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#hasplatformtype
+  HasPlatformType:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#ignoredreturnvalue
+  IgnoredReturnValue:
+    active: true
+    restrictToConfig: true
+    returnValueAnnotations:
+      - 'CheckResult'
+      - '*.CheckResult'
+      - 'CheckReturnValue'
+      - '*.CheckReturnValue'
+    ignoreReturnValueAnnotations:
+      - 'CanIgnoreReturnValue'
+      - '*.CanIgnoreReturnValue'
+    returnValueTypes:
+      - 'kotlin.sequences.Sequence'
+      - 'kotlinx.coroutines.flow.*Flow'
+      - 'java.util.stream.*Stream'
+    ignoreFunctionCall: []
+
+  # https://detekt.dev/docs/rules/potential-bugs#implicitdefaultlocale
+  ImplicitDefaultLocale:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#implicitunitreturntype
+  ImplicitUnitReturnType:
+    active: true
+    allowExplicitReturnType: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#invalidrange
+  InvalidRange:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#iteratorhasnextcallsnextmethod
+  IteratorHasNextCallsNextMethod:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#iteratornotthrowingnosuchelementexception
+  IteratorNotThrowingNoSuchElementException:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#lateinitusage
+  LateinitUsage:
+    active: false
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+    ignoreOnClassesPattern: ''
+
+  # https://detekt.dev/docs/rules/potential-bugs#mapgetwithnotnullassertionoperator
+  MapGetWithNotNullAssertionOperator:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#missingpackagedeclaration
+  MissingPackageDeclaration:
+    active: true
+    excludes: ['**/*.kts']
+
+  # https://detekt.dev/docs/rules/potential-bugs#nullcheckonmutableproperty
+  NullCheckOnMutableProperty:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#nullabletostringcall
+  NullableToStringCall:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#unconditionaljumpstatementinloop
+  UnconditionalJumpStatementInLoop:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#unnecessarynotnullcheck
+  UnnecessaryNotNullCheck:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#unnecessarynotnulloperator
+  UnnecessaryNotNullOperator:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#unnecessarysafecall
+  UnnecessarySafeCall:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#unreachablecatchblock
+  UnreachableCatchBlock:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#unreachablecode
+  UnreachableCode:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#unsafecallonnullabletype
+  UnsafeCallOnNullableType:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+
+  # https://detekt.dev/docs/rules/potential-bugs#unsafecast
+  UnsafeCast:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#unusedunaryoperator
+  UnusedUnaryOperator:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#uselesspostfixexpression
+  UselessPostfixExpression:
+    active: true
+
+  # https://detekt.dev/docs/rules/potential-bugs#wrongequalstypeparameter
+  WrongEqualsTypeParameter:
+    active: true
+
+
+complexity:
+  active: true
+
+  # https://detekt.dev/docs/rules/complexity#cognitivecomplexmethod
+  CognitiveComplexMethod:
+    active: true
+    threshold: 15
+
+  # https://detekt.dev/docs/rules/complexity#complexcondition
+  ComplexCondition:
+    active: true
+    threshold: 4
+
+  # https://detekt.dev/docs/rules/complexity#complexinterface
+  ComplexInterface:
+    active: false
+    threshold: 15
+    includeStaticDeclarations: false
+    includePrivateDeclarations: false
+    ignoreOverloaded: false
+
+  # https://detekt.dev/docs/rules/complexity#cyclomaticcomplexmethod
+  CyclomaticComplexMethod:
+    active: true
+    threshold: 15
+    ignoreSingleWhenExpression: false
+    ignoreSimpleWhenEntries: false
+    ignoreNestingFunctions: false
+    nestingFunctions:
+      - 'also'
+      - 'apply'
+      - 'forEach'
+      - 'isNotNull'
+      - 'ifNull'
+      - 'let'
+      - 'run'
+      - 'use'
+      - 'with'
+
+  # https://detekt.dev/docs/rules/complexity#labeledexpression
+  LabeledExpression:
+    active: true
+    ignoredLabels: []
+
+  # https://detekt.dev/docs/rules/complexity#largeclass
+  LargeClass:
+    active: true
+    threshold: 600
+
+  # https://detekt.dev/docs/rules/complexity#longmethod
+  LongMethod:
+    active: false
+    threshold: 60
+
+  # https://detekt.dev/docs/rules/complexity#longparameterlist
+  LongParameterList:
+    active: false
+    functionThreshold: 20
+    constructorThreshold: 20
+    ignoreDefaultParameters: false
+    ignoreDataClasses: true
+    ignoreAnnotatedParameter: []
+
+  # https://detekt.dev/docs/rules/complexity#methodoverloading
+  MethodOverloading:
+    active: false
+    threshold: 6
+
+  # https://detekt.dev/docs/rules/complexity#namedarguments
+  NamedArguments:
+    active: true
+    threshold: 3
+    ignoreArgumentsMatchingNames: false
+
+  # https://detekt.dev/docs/rules/complexity#nestedblockdepth
+  NestedBlockDepth:
+    active: true
+    threshold: 4
+
+  # https://detekt.dev/docs/rules/complexity#nestedscopefunctions
+  NestedScopeFunctions:
+    active: true
+    threshold: 1
+    functions:
+      - 'kotlin.apply'
+      - 'kotlin.run'
+      - 'kotlin.with'
+      - 'kotlin.let'
+      - 'kotlin.also'
+
+  # https://detekt.dev/docs/rules/complexity#replacesafecallchainwithrun
+  ReplaceSafeCallChainWithRun:
+    active: true
+
+  # https://detekt.dev/docs/rules/complexity#stringliteralduplication
+  StringLiteralDuplication:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+    threshold: 3
+    ignoreAnnotation: true
+    excludeStringsWithLessThan5Characters: true
+    ignoreStringsRegex: '$^'
+
+  # https://detekt.dev/docs/rules/complexity#toomanyfunctions
+  TooManyFunctions:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+    thresholdInFiles: 15
+    thresholdInClasses: 15
+    thresholdInInterfaces: 15
+    thresholdInObjects: 15
+    thresholdInEnums: 15
+    ignoreDeprecated: false
+    ignorePrivate: false
+    ignoreOverridden: false
+
+
+exceptions:
+  active: true
+
+  # https://detekt.dev/docs/rules/exceptions#exceptionraisedinunexpectedlocation
+  ExceptionRaisedInUnexpectedLocation:
+    active: true
+    methodNames:
+      - 'equals'
+      - 'finalize'
+      - 'hashCode'
+      - 'toString'
+
+  # https://detekt.dev/docs/rules/exceptions#instanceofcheckforexception
+  InstanceOfCheckForException:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+
+  # https://detekt.dev/docs/rules/exceptions#notimplementeddeclaration
+  NotImplementedDeclaration:
+    active: true
+
+  # https://detekt.dev/docs/rules/exceptions#objectextendsthrowable
+  ObjectExtendsThrowable:
+    active: true
+
+  # https://detekt.dev/docs/rules/exceptions#objectextendsthrowable
+  PrintStackTrace:
+    active: true
+
+  # https://detekt.dev/docs/rules/exceptions#rethrowcaughtexception
+  RethrowCaughtException:
+    active: true
+
+  # https://detekt.dev/docs/rules/exceptions#returnfromfinally
+  ReturnFromFinally:
+    active: true
+    ignoreLabeled: false
+
+  # https://detekt.dev/docs/rules/exceptions/#swallowedexception
+  SwallowedException:
+    active: true
+    ignoredExceptionTypes:
+      - 'InterruptedException'
+      - 'MalformedURLException'
+      - 'NumberFormatException'
+      - 'ParseException'
+    allowedExceptionNameRegex: '_|(ignore|expected).*'
+
+  # https://detekt.dev/docs/rules/exceptions#throwingexceptionfromfinally
+  ThrowingExceptionFromFinally:
+    active: true
+
+  # https://detekt.dev/docs/rules/exceptions#throwingexceptioninmain
+  ThrowingExceptionInMain:
+    active: true
+
+  # https://detekt.dev/docs/rules/exceptions#throwingexceptionswithoutmessageorcause
+  ThrowingExceptionsWithoutMessageOrCause:
+    active: true
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+    exceptions:
+      - 'ArrayIndexOutOfBoundsException'
+      - 'Exception'
+      - 'IllegalArgumentException'
+      - 'IllegalMonitorStateException'
+      - 'IllegalStateException'
+      - 'IndexOutOfBoundsException'
+      - 'NullPointerException'
+      - 'RuntimeException'
+      - 'Throwable'
+
+  # https://detekt.dev/docs/rules/exceptions#throwingnewinstanceofsameexception
+  ThrowingNewInstanceOfSameException:
+    active: true
+
+  # https://detekt.dev/docs/rules/exceptions#toogenericexceptioncaught
+  TooGenericExceptionCaught:
+    active: false
+    excludes: ['**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/androidUnitTest/**', '**/androidInstrumentedTest/**', '**/jsTest/**', '**/iosTest/**']
+    exceptionNames:
+      - 'ArrayIndexOutOfBoundsException'
+      - 'Error'
+      - 'Exception'
+      - 'IllegalMonitorStateException'
+      - 'IndexOutOfBoundsException'
+      - 'NullPointerException'
+      - 'RuntimeException'
+      - 'Throwable'
+    allowedExceptionNameRegex: '_|(ignore|expected).*'
+
+  # https://detekt.dev/docs/rules/exceptions#toogenericexceptionthrown
+  TooGenericExceptionThrown:
+    active: true
+    exceptionNames:
+      - 'Error'
+      - 'Exception'
+      - 'RuntimeException'
+      - 'Throwable'
