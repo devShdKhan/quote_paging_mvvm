@@ -34,6 +34,28 @@ jobs:
           reviewdog_level: error
           fail_on_error: true
 
+      - name: Extract Detekt Issues
+        id: extract-issues
+        run: |
+          ISSUES=$(awk -F'[<>]' '/<tr class="error">/{print $5}' build/reports/detekt/detekt-check.html)
+          echo "::set-output name=issues::$ISSUES"
+
+      - name: Comment on PR if issues found
+        if: steps.extract-issues.outputs.issues
+        run: |
+          ISSUES=${{ steps.extract-issues.outputs.issues }}
+          IFS=' ' read -r -a ISSUE_ARRAY <<< "$ISSUES"
+          for ISSUE in "${ISSUE_ARRAY[@]}"; do
+            FILE=$(echo "$ISSUE" | awk -F':' '{print $1}')
+            LINE=$(echo "$ISSUE" | awk -F':' '{print $2}')
+            COMMENT=$(echo "$ISSUE" | awk -F':' '{print $3}')
+            echo "File: $FILE, Line: $LINE, Comment: $COMMENT"
+            curl -sSL -X POST -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+              -d '{"body":"Detekt issue: '"$COMMENT"'","path":"'"$FILE"'","position":'"$LINE"'}' \
+              -H "Content-Type: application/json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/pulls/${{ github.event.pull_request.number }}/comments"
+          done
+
       - name: Validate Comments
         run: |
           comments_json=$(curl -s -H "Authorization: Bearer ${{ secrets.github_token }}" \
