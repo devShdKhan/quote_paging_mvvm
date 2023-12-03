@@ -110,7 +110,7 @@ formatting:
   Indentation:
     active: true
     autoCorrect: true
-    indentSize: 2
+    indentSize: 4
 
   # https://pinterest.github.io/ktlint/rules/standard/#modifier-order
   ModifierOrdering:
