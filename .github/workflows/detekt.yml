@@ -1,10 +1,10 @@
 name: Linter Run Action
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
-    types: [ synchronize, labeled ]
-    branches:
-      - '**'
+    branches: [ "main" ]
 
 jobs:
   detekt:
