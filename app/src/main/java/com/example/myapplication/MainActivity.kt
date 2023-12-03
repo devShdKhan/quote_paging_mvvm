@@ -12,9 +12,5 @@ class MainActivity : FragmentActivity() {
         setContentView(R.layout.activity_main)
         installSplashScreen()
         println("splash is starting")
-
-
     }
-
-
 }
